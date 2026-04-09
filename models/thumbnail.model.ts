@@ -91,7 +91,7 @@ const thumbnailSchema = new Schema<IThumbnail>({
     },
     isGenerating: {
         type: Boolean,
-        default: true,
+        default: false,
     },
 }, {
     timestamps: true,
