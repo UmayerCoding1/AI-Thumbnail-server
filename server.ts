@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import connectDB from "./config/db.js";
 import expressSession from "express-session";
 import MongoStore from "connect-mongo";
+import authRouter from "./routes/auth.route.js";
 const app = express();
 
 // Middleware
@@ -49,6 +50,9 @@ app.get('/', (req: Request, res: Response) => {
 
     res.send('Server is Live!');
 });
+
+app.use("/api/auth", authRouter);
+
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);

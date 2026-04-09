@@ -1,4 +1,5 @@
-import mongoose, { Schema, Types, model, models } from "mongoose";
+import mongoose, { Types } from "mongoose";
+const { Schema, model, models } = mongoose;
 
 export interface iUser extends Document {
     _id?: Types.ObjectId;
