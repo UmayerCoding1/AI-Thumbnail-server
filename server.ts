@@ -8,6 +8,7 @@ import connectDB from "./config/db.js";
 import expressSession from "express-session";
 import MongoStore from "connect-mongo";
 import authRouter from "./routes/auth.route.js";
+import ThumbnailRouter from "./routes/thumbnail.route.js";
 const app = express();
 
 // Middleware
@@ -52,6 +53,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use("/api/auth", authRouter);
+app.use('/api/thumbnail', ThumbnailRouter);
 
 
 app.listen(port, () => {
